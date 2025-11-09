@@ -1,0 +1,22 @@
+# 🚀 CI/CD Pipeline Project using Jenkins
+
+## 📘 Overview
+This project demonstrates how to automate a Java-based application build and deployment using Jenkins, Docker, and Git.
+
+## ⚙️ Tools Used
+- Jenkins
+- Docker
+- Git
+- Linux
+- Java
+
+## 🔧 Pipeline Flow
+1. Jenkins pulls the latest code from GitHub.
+2. Builds the Java application.
+3. Runs the code and tests.
+4. Builds and runs a Docker container.
+
+## 🧠 Learning Outcomes
+- Understood Jenkins pipeline structure
+- Integrated Docker with Jenkins
+- Learned automation for build and deployment
