@@ -1,0 +1,6 @@
+CI-CD-Pipeline-Project/
+├── src/
+│   └── HelloWorld.java
+├── Dockerfile
+├── Jenkinsfile
+└── README.md

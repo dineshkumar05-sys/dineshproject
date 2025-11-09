@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Cloning repository...'
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building project...'
+                sh 'javac src/HelloWorld.java'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                sh 'java src/HelloWorld'
+            }
+        }
+
+        stage('Docker Build & Run') {
+            steps {
+                echo 'Building Docker image...'
+                sh 'docker build -t ci-cd-demo .'
+                echo 'Running Docker container...'
+                sh 'docker run ci-cd-demo'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Pipeline executed successfully!'
+        }
+        failure {
+            echo '❌ Pipeline failed.'
+        }
+    }
+}
